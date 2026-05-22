@@ -102,12 +102,12 @@ const Login = () => { // Page login complète
       <img src={logo} className='login-logo' alt="" /> {/* Logo grand en haut */}
       <div className="login-form"> {/* Formulaire principal utilisateur */}
         <h1>{signState}</h1> {/* Titre dynamique connexion ou inscription */}
-        <form onSubmit={user_auth}> {/* Formulaire email / mot de passe avec envoi automatique */}
+        <form onSubmit={user_auth}> {/* Formulaire avec envoi automatique pour sauvegarder le mot de passe */}
           {signState === "S'inscrire" ?
-            <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Votre nom' autoComplete='name' /> : <></>} {/* Nom visible seulement à l'inscription */}
-          <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email' autoComplete='email' /> {/* Champ email avec auto-complétion */}
-          <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Mot de passe' autoComplete={signState === "S'inscrire" ? 'new-password' : 'current-password'} /> {/* Champ mot de passe avec auto-complétion */}
-          <button type='submit'>{signState}</button> {/* Bouton envoi qui déclenche onSubmit */}
+            <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" name="name" placeholder='Votre nom' autoComplete='name' /> : <></>} {/* name="name" et autoComplete pour l'auto-remplissage */}
+          <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" name="email" placeholder='Email' autoComplete='email' /> {/* name="email" aide le navigateur à reconnaître le champ */}
+          <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" name="password" placeholder='Mot de passe' autoComplete={signState === "S'inscrire" ? 'new-password' : 'current-password'} /> {/* name="password" pour que Chrome propose de sauvegarder */}
+          <button type='submit'>{signState}</button> {/* Bouton type submit obligatoire pour l'auto-complétion */}
           <div className="form-help"> {/* Zone aide sous le formulaire */}
             <div className="remember"> {/* Case à cocher */}
               <input type="checkbox" id="rememberMe" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} /> {/* Checkbox HTML */}
