@@ -15,6 +15,8 @@ const Login = () => { // Page login complète
   const [password, setPassword] = useState(""); // Champ mot de passe
   const [loading, setLoading] = useState(false); // Chargement en cours ?
   const [verificationSent, setVerificationSent] = useState(false); // Bannière email envoyé ?
+  const [rememberMe, setRememberMe] = useState(true); // Se souvenir de moi
+
 
   const [showAdminModal, setShowAdminModal] = useState(false); // Fenêtre admin visible ?
   const [adminUser, setAdminUser] = useState(""); // Login admin tapé
@@ -26,7 +28,7 @@ const Login = () => { // Page login complète
     event.preventDefault(); // Pas de rechargement page
     setLoading(true); // Affiche spinner
     if (signState === "Se connecter") { // Mode connexion
-      const result = await login(email, password); // Appel Firebase login
+      const result = await login(email, password, rememberMe); // Appel Firebase login
       if (result?.needsVerification) setVerificationSent(true); // Email non validé
       else if (result?.success) navigate('/'); // Succès -> accueil
     } else { // Mode inscription
@@ -107,11 +109,11 @@ const Login = () => { // Page login complète
           <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Mot de passe' /> {/* Champ mot de passe */}
           <button onClick={user_auth} type='submit'>{signState}</button> {/* Bouton envoi : appelle user_auth */}
           <div className="form-help"> {/* Zone aide sous le formulaire */}
-            <div className="remember"> {/* Case à cocher décorative */}
-              <input type="checkbox" /> {/* Checkbox HTML */}
-              <label htmlFor="">Se souvenir de moi</label> {/* Texte à côté */}
+            <div className="remember"> {/* Case à cocher */}
+              <input type="checkbox" id="rememberMe" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} /> {/* Checkbox HTML */}
+              <label htmlFor="rememberMe">Se souvenir de moi</label> {/* Texte à côté */}
             </div>
-            <p>Besoin d'aide?</p> {/* Lien texte décoratif */}
+            <p><a href="https://github.com/papikx" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>Besoin d'aide?</a></p> {/* Lien GitHub */}
           </div>
         </form>
         <div className="form-switch"> {/* Basculer connexion <-> inscription */}
