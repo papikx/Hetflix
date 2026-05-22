@@ -3,6 +3,9 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendEmailVerification,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence
 } from 'firebase/auth'; // Fonctions Firebase auth
 import { addDoc, collection } from 'firebase/firestore'; // Écrire dans Firestore
 import { toast } from 'react-toastify'; // Messages
@@ -29,8 +32,10 @@ export const signup = async (name, email, password) => { // Inscription
   }
 };
 
-export const login = async (email, password) => { // Connexion utilisateur
+export const login = async (email, password, rememberMe = true) => { // Connexion utilisateur avec option "Se souvenir de moi"
   try {
+    // Si rememberMe est vrai, garde la session ouverte. Sinon, déconnecte à la fermeture du navigateur
+    await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence);
     const res = await signInWithEmailAndPassword(auth, email, password); // Essaie connexion
     if (!res.user.emailVerified) { // Email pas encore validé
       await signOut(auth); // Déconnecte
