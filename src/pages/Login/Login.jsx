@@ -102,12 +102,12 @@ const Login = () => { // Page login complète
       <img src={logo} className='login-logo' alt="" /> {/* Logo grand en haut */}
       <div className="login-form"> {/* Formulaire principal utilisateur */}
         <h1>{signState}</h1> {/* Titre dynamique connexion ou inscription */}
-        <form> {/* Formulaire email / mot de passe */}
+        <form onSubmit={user_auth}> {/* Formulaire email / mot de passe avec envoi automatique */}
           {signState === "S'inscrire" ?
-            <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Votre nom' /> : <></>} {/* Nom visible seulement à l'inscription */}
-          <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email' /> {/* Champ email */}
-          <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Mot de passe' /> {/* Champ mot de passe */}
-          <button onClick={user_auth} type='submit'>{signState}</button> {/* Bouton envoi : appelle user_auth */}
+            <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Votre nom' autoComplete='name' /> : <></>} {/* Nom visible seulement à l'inscription */}
+          <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email' autoComplete='email' /> {/* Champ email avec auto-complétion */}
+          <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Mot de passe' autoComplete={signState === "S'inscrire" ? 'new-password' : 'current-password'} /> {/* Champ mot de passe avec auto-complétion */}
+          <button type='submit'>{signState}</button> {/* Bouton envoi qui déclenche onSubmit */}
           <div className="form-help"> {/* Zone aide sous le formulaire */}
             <div className="remember"> {/* Case à cocher */}
               <input type="checkbox" id="rememberMe" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} /> {/* Checkbox HTML */}
