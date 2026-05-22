@@ -1,0 +1,258 @@
+.navbar {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 16px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navbar-left img,
+.navbar-logo {
+    width: 110px;
+    cursor: pointer;
+}
+
+.navbar-left ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-left ul li {
+    cursor: pointer;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-right .icons {
+    width: 25px;
+    cursor: pointer;
+}
+
+.navbar-right .profile {
+    border-radius: 4px;
+    width: 40px;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1;
+    display: none;
+}
+
+.navbar .dropdown p {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.navbar-profile:hover .dropdown {
+    display: block;
+}
+
+.nav-dark {
+    background: #141414;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 10px;
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s, opacity 0.3s;
+    pointer-events: none;
+}
+
+.search-input.active {
+    width: 200px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: #191919;
+    border: 1px solid #333;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: background 0.2s;
+}
+
+.search-result-item:hover {
+    background: #333;
+}
+
+.search-result-item img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.search-result-item p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.search-result-add-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: auto;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.search-result-add-btn:hover {
+    background: white;
+    color: black;
+}
+
+.search-result-add-btn.added {
+    background: white;
+    color: black;
+}
+
+.notification-container {
+    display: flex;
+    align-items: center;
+}
+
+.notifications-dropdown {
+    position: absolute;
+    top: 150%;
+    right: -20px;
+    width: 300px;
+    background: #191919;
+    border: 1px solid #333;
+    border-radius: 4px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.notification-item:hover {
+    background: #333;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.notification-desc {
+    font-size: 12px;
+    margin: 0;
+    color: #b3b3b3;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 20px 4%;
+    }
+    .navbar-left ul {
+        display: none;
+    }
+    .navbar-img {
+        height: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar img {
+        height: 20px;
+    }
+    .navbar-right {
+        gap: 10px;
+    }
+}

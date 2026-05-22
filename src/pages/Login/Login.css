@@ -1,0 +1,224 @@
+.login {
+    height: 100vh;
+    background-image: linear-gradient(#0000007e, #0000007e), url(/background_banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px 8%;
+}
+
+.login-logo {
+    width: 150px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 60px;
+    margin: auto;
+}
+
+.login-form h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.login-form input {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: white;
+    margin: 12px 0;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-form input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-form button {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 16px;
+    background: #e50914;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.form-help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.remember {
+    display: flex; 
+    align-items: center;
+    gap: 5px;
+}
+
+.remember input {
+    width: 18px;
+    height: 18px;
+}
+
+.form-switch {
+    margin-top: 40px;
+    color: #737373;
+}
+
+.form-switch span {
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-spinner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-spinner img {
+    width: 150px;
+}
+
+@media (max-width: 500px) {
+    .login {
+        padding: 15px 5%;
+    }
+    .login-form {
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
+
+.admin-access {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.admin-access:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.admin-modal {
+    background: #181818;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+}
+
+.admin-modal h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.admin-modal input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+}
+
+.admin-modal-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.admin-modal-btns button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.admin-modal-btns .login-btn {
+    background: #e50914;
+    color: white;
+}
+
+.admin-modal-btns .login-btn:hover {
+    background: #c10712;
+}
+
+.admin-modal-btns .cancel-btn {
+    background: #444;
+    color: white;
+}
+
+.admin-modal-btns .cancel-btn:hover {
+    background: #555;
+}
+
+.verification-banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    border: 1px solid #e50914;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 999;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+}
