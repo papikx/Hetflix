@@ -115,7 +115,7 @@ const Admin = () => { // Fonction qui dessine toute la page admin
                     <option value="popular">Populaire</option> {/* Rangée populaire */}
                     <option value="top_rated">Films à succès</option> {/* Top rated */}
                     <option value="upcoming">À venir</option> {/* Prochainement */}
-                    <option value="now_playing">Selection</option> {/* Sélection */}
+                    <option value="now_playing">En salle</option> {/* En salle */}
                     <option value="hetflix">Uniquement sur Hetflix</option> {/* Catégorie custom */}
                 </select>
             </div>
