@@ -99,15 +99,23 @@
 }
 
 @media (max-width: 500px) {
+    .hero-caption {
+        padding-left: 4%;
+        bottom: 20px;
+    }
     .caption-img {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+    .hero-caption p {
         display: none;
     }
     .hero-btns .btn img {
         width: 15px;
     }
     .hero-btns .btn {
-        padding: 4px 10px;
+        padding: 6px 12px;
         gap: 5px;
-        font-size: 10px;
+        font-size: 12px;
     }
 }
