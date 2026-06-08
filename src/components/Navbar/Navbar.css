@@ -249,10 +249,28 @@
 }
 
 @media (max-width: 500px) {
-    .navbar img {
-        height: 20px;
+    .navbar {
+        padding: 15px 4%;
+    }
+    .navbar-logo {
+        width: 80px;
+    }
+    .navbar-right > p {
+        display: none;
     }
     .navbar-right {
-        gap: 10px;
+        gap: 12px;
+    }
+    .navbar-right .profile {
+        width: 25px;
+    }
+    .navbar-right .icons {
+        width: 18px;
+    }
+    .navbar-profile {
+        gap: 4px;
+    }
+    .navbar-profile img[src*="caret"] {
+        display: none;
     }
 }
