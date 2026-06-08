@@ -172,6 +172,10 @@
     .title-cards h2 {
         font-size: 20px;
     }
+    .card-container {
+        width: 200px;
+        height: 112.5px;
+    }
     .card-list img {
         width: 200px;
         height: 112.5px;
@@ -184,6 +188,10 @@
 @media (max-width: 500px) {
     .title-cards h2 {
         font-size: 15px;
+    }
+    .card-container {
+        width: 165px;
+        height: 93px;
     }
     .card-list img {
         width: 165px;
